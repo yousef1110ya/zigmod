@@ -3,13 +3,13 @@ const print = std.debug.print;
 
 var file_count: usize = 0;
 var file_mtime: [100]i128 = undefined;
+const path = "D:\\Zig codes\\zigmod";
 
 // const command: []u8 = "zig run index.zig";
 
 pub fn watchFiles() !void {
     const allocater = std.heap.page_allocator;
 
-    const path = "D:\\Zig codes\\zigmod";
     const cur_path = try std.fs.path.join(allocater, &.{ path, "" });
     print("just starting the watch files \n", .{});
     print("the current path is {s}\n", .{cur_path});
